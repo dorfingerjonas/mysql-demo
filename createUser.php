@@ -34,4 +34,3 @@ if (!empty($_POST['submit'])) {
 }
 
 $conn->close();
-echo "end of php file";
