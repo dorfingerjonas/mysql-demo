@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Create new User</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <h1>create a new user</h1>
+
 <form method="post" action="sql.php">
-    New Username: <input name="username"><br>
-    Password: <input name="password" type="password"><br>
-    Retype password: <input name="password_2" type="password"><br>
-    <input type="submit" name="submit" value="Create new user">
+    <div class='row'>
+        <span>New Username: </span>
+        <input name="username" type="text">
+    </div>
+
+    <div class='row'>
+        <span>Password: </span>
+        <input name="password" type="password">
+    </div>
+
+    <div class='row'>
+        <span>Retype password: </span>
+        <input name="password_2" type="password">
+    </div>
+
+    <input type="submit" name="submit" class='button' value="Create new user">
 </form>
 </body>
 </html>
