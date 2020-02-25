@@ -29,8 +29,6 @@ if (!empty($_POST['submit'])) {
         echo "<br>No insertion. User could not be added. Maybe user $_username already exists.";
         include("index.html");
     }
-
-
 } else {
     include("index.html");
 }
