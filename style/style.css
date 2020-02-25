@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/muli.ttf');
+  }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row {
+    width: 22vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 0;
+}
+
+.button {
+    padding: 1.5vh;
+    margin-top: 3vh;
+    text-align: center;
+    background: #1b3647;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 0 0.25rem #1b364780;
+}
+
+input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    outline: none;
+    transition: border-color 250ms ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #353535;
+}
