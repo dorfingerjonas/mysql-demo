@@ -21,6 +21,7 @@ if ((isset($_POST["submit"])) && !empty($_POST["submit"])) {
 
     echo "logged in";
 } else {
+    // login failed
     include("login.html");
 }
 
