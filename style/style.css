@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Muli';
     src: url('../fonts/muli.ttf');
-  }
+}
 
 body {
     width: 100vw;
@@ -29,6 +29,7 @@ body {
     background: #1b3647;
     color: #fff;
     border: none;
+    font-size: 1vw;
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
@@ -49,4 +50,8 @@ input[type="text"], input[type="password"] {
 
 input[type="text"]:focus, input[type="password"]:focus {
     border-color: #353535;
+}
+
+a {
+    text-decoration: none;
 }
