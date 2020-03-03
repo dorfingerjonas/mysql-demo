@@ -22,7 +22,7 @@ if (!empty($_POST['submit'])) {
 
     $_password = "saver". $_password;
 
-    $insertStatement = "INSERT INTO login_username (username, password, user_deleted, last_login) VALUES ('$_username', md5('$_password'),0,NOW())";
+    $insertStatement = "INSERT INTO login_username (username, password, user_deleted, last_login) VALUES ('$_username', md5('$_password'), 0, NOW())";
     if ($res = $conn->query($insertStatement)) {
         include("login.html");
     } else {

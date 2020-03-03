@@ -1,4 +1,5 @@
 <?php
+
 $_db_host = "localhost";
 $_db_database = "web";
 $_db_username = "web";
@@ -19,10 +20,27 @@ if ((isset($_POST["submit"])) && !empty($_POST["submit"])) {
     $_password = "saver" . $_password;
     $_sql = "SELECT * FROM login_username WHERE username='$_username' AND password=md5('$_password') AND user_deleted=0 LIMIT 1";
 
-    echo "logged in";
+    if ($_res = $conn->query($_sql)) {
+        if($_res->num_rows > 0){
+            $_SESSION["login"] = 1;
+            $_SESSION["user"] = $_res->fetch_assoc();
+
+            $_sql = "UPDATE login_username SET last_login=NOW() WHERE id=" . $_SESSION["user"]["id"];
+            $conn->query($_sql);
+        }
+    } else {
+        include("login.html");
+        exit;
+    }
 } else {
-    // login failed
     include("login.html");
 }
 
 $conn->close();
+
+if ($_SESSION["login"] != 1) {
+    include("login.html");
+    exit;
+}
+
+echo "<br>User " . $_SESSION["user"]["username"] . " is logged in since " . $_SESSION["user"]["last_login"] . "<br>";
